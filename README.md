@@ -68,7 +68,7 @@ Install the following before running locally:
 ### 1. Get the code
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/CodewithMe89/seller-shield-frontend
 cd SellerShield
 ```
 
@@ -167,7 +167,7 @@ The frontend and backend should be deployed as **two separate Vercel projects** 
 3. Add the following environment variables in Vercel Project Settings:
    - `MONGO_URI` — production MongoDB connection string
    - `JWT_SECRET` — strong production-only secret
-   - `CLIENT_URL` — exact deployed frontend origin, such as `https://your-client.vercel.app`
+   - `CLIENT_URL` — exact deployed frontend origin, such as `https://seller-shield-frontend.vercel.app/`
 4. Deploy the project.
 5. Open the backend project URL and confirm the root health response works.
 
@@ -176,8 +176,8 @@ The frontend and backend should be deployed as **two separate Vercel projects** 
 1. Import the same repository as a second Vercel project.
 2. Set **Root Directory** to `Client`.
 3. Use the Vite framework preset, build command `npm run build`, and output directory `dist`.
-4. Set `VITE_API_URL` to the backend origin only, for example `https://your-server.vercel.app`—without a trailing `/api`.
-5. Deploy the project and test direct navigation to `/login`, `/register`, and authenticated pages.
+4. Set `VITE_API_URL` to the backend origin only, for example `https://seller-shield-frontend.vercel.app`—without a trailing `/api`.
+5. Deploy the project and test direct navigation to `/api/login`, `/api/register`, and authenticated pages.
 
 The backend CORS allowlist includes the configured `CLIENT_URL`, localhost for development, and the frontend URL currently present in the source. If your deployed frontend URL changes, update `CLIENT_URL` in the backend environment and redeploy. Confirm the allowlist matches the intended production frontend.
 
